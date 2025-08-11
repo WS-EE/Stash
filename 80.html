@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TCP/80</title>
+  <meta name="description" content="EuroSkills 2025 — IT Network Systems Administration (Skill 39) — INET, Port 80" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230055FF'/><text x='50' y='58' font-size='54' text-anchor='middle' fill='white'>80</text></svg>">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-accent: #0f1b35;
+      --primary: #0055ff; /* EuroSkills blue */
+      --secondary: #00d1ff;
+      --accent: #ffd166;  /* gold accent */
+      --text: #e6ecff;
+      --muted: #9bb0d3;
+      --card: #101a33;
+      --success: #2ecc71;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+      color: var(--text); background: radial-gradient(1200px 800px at 10% -10%, #0c1b3a 0%, var(--bg) 40%), linear-gradient(160deg, var(--bg-accent), var(--bg));
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { display: grid; grid-template-columns: 64px 1fr auto; gap: 16px; align-items: center; padding: 16px 0 8px; }
+    .logo {
+      width: 64px; height: 64px; border-radius: 16px; background:
+        conic-gradient(from 210deg at 50% 50%, var(--secondary), var(--primary));
+      display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      outline: 2px solid rgba(255,255,255,.06);
+    }
+    .logo span { font-weight: 800; font-size: 22px; letter-spacing: .5px; }
+    .title h1 { margin: 0; font-size: 28px; }
+    .title p { margin: 4px 0 0; color: var(--muted); }
+    .badge { padding: 8px 12px; border-radius: 999px; background: rgba(0,85,255,.12); border: 1px solid rgba(0,85,255,.35); font-weight: 700; letter-spacing: .3px; }
+
+    .hero { position: relative; overflow: hidden; border-radius: 20px; background: linear-gradient(135deg, rgba(0,85,255,.25), rgba(0,209,255,.1)); border: 1px solid rgba(255,255,255,.08); padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    .hero h2 { margin: 0 0 8px; font-size: 30px; }
+    .hero p { margin: 0; color: var(--muted); }
+    .port-pill { position: absolute; top: 16px; right: 16px; background: var(--accent); color: #1a1f2e; font-weight: 800; padding: 8px 12px; border-radius: 999px; box-shadow: 0 6px 20px rgba(255,209,102,.3); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin: 24px 0; }
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .btn { text-decoration: none; font-weight: 700; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(0,85,255,.15); color: var(--text); display: inline-block; transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.35); background: rgba(0,85,255,.25); }
+
+    .switch { margin-top: 24px; }
+    .switch a { color: var(--accent); font-weight: 800; }
+    footer { color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); margin-top: 24px; padding-top: 16px; display:flex; justify-content:space-between; align-items:center; gap: 12px; flex-wrap: wrap; }
+    .status { display:flex; gap:10px; align-items:center; }
+    .dot { width:10px; height:10px; border-radius:50%; background: var(--success); box-shadow:0 0 0 3px rgba(46,204,113,.2); }
+    code.inline { background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden="true"><span>39</span></div>
+      <div class="title">
+        <h1>EuroSkills 2025 — INET</h1>
+      </div>
+      <div class="status"><span class="dot" aria-hidden="true"></span>Services healthy</div>
+    </header>
+
+    <section class="hero" aria-label="Hero">
+      <div class="port-pill">PORT 80</div>
+      <h2>Welcome, Competitor!</h2>
+      <p>INET web site on port 80 is reachable.</p>
+    </section>
+  </div>
+
+  <script>
+    // Fill in the host automatically for the cross-link
+    const h = location.hostname || 'localhost';
+    document.querySelectorAll('#host80, #host80b').forEach(el => el.textContent = h);
+  </script>
+</body>
+</html>
